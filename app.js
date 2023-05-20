@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
-
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 
 const databasePath = path.join(__dirname, "todoApplication.db");
+
 const app = express();
+
 app.use(express.json());
 
 let database = null;
@@ -83,7 +84,6 @@ app.get("/todos/", async (request, response) => {
           todo LIKE '%${search_q}%'
           AND status = '${status}';`;
       break;
-
     default:
       getTodosQuery = `
     SELECT
