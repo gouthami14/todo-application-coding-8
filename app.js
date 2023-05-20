@@ -63,7 +63,7 @@ app.get("/todos/", async (request, response) => {
           AND priority = '${priority}';`;
       break;
 
-    case hasPriorityProperty(request.query):
+    case hasPriorityAndProperty(request.query):
       getTodosQuery = `
         SELECT
           *
