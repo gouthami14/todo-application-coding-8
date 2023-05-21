@@ -116,7 +116,7 @@ app.get("/todos/:todoId/", async (request, response) => {
 app.post("/todos/", async (request, response) => {
   const { id, todo, priority, status } = request.body;
   const postTodoQuery = `
-    INSET INTO
+    INSERT INTO
       todo (id, todo, priority, status)
     VALUES
      (${id}, '${todo}', '${priority}', '${status}');`;
